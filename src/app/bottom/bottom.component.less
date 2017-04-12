@@ -4,14 +4,27 @@
     height:50%;
 
     header{
-        width:164px;
-        height:30px;
-        padding:30px 0;
-        background: url("/assets/images/nespresso.svg") no-repeat center;
-        background-size: contain;
+        width:100%;
+        padding:0 0 20px;
+        
+        .line{
+            width:100%;
+            background-color:#e30613;
+            height:2px;
+            margin-bottom:20px;
+        }
+
+        .nespresso-logo{
+            width:164px;
+            height:30px;
+            background: url("/assets/images/nespresso.svg") no-repeat center;
+            background-size: contain;
+        }
     }
 
     .label{
+        position: absolute;
+        bottom: 0;
         font:normal 16px/1em 'Frutiger Neue LT W1G Book';
         color:#8e6832;
     }
@@ -19,7 +32,8 @@
     .column{
         display: inline-block;
         vertical-align: top;
-        //width:200px;
+        width:190px;
+        padding-right: 5px;
 
         .icon{
             width:80px;
@@ -38,22 +52,22 @@
 
         .text,
         .title{
-            padding-top:20px;
+            padding-top:10px;
         }
 
-        &:nth-child(1){
+        &:nth-child(2){
             .icon{
                 background-image:url("/assets/images/b1.svg");
             }
         }
 
-        &:nth-child(2){
+        &:nth-child(3){
             .icon{
                 background-image:url("/assets/images/b2.svg");
             }
         }
 
-        &:nth-child(3){
+        &:nth-child(4){
             .icon{
                 background-image:url("/assets/images/b3.svg");
             }

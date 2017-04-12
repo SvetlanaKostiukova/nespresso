@@ -1,31 +1,78 @@
-.year{
-    color:#8e6832;
-    font:14px/20px 'Frutiger Neue LT W1G Book';
-
-    &.selected{
-        font:500 22px/30px 'Frutiger Neue LT W1G';
-        color:#e30613;
-    }
-}
-
-.line{
+.timeline{
+    position:relative;
     width:100%;
-    color:#e30613;
-    height:2px;
-}
 
-.arrow{
-    height:14px;
-    width:9px;
-}
+    .labels{
+        width:100%;
+    }
 
-.circle{
-    height:15px;
-    width:15px;
-    background-color:white;
-    border:1px solid #f1d400;
+    .year{
+        display: inline-block;
+        color:#8e6832;
+        font:14px/20px 'Frutiger Neue LT W1G Book';
 
-    &.selected{
-        background-color: #e30613;
+        &.selected{
+            font:500 22px/30px 'Frutiger Neue LT W1G';
+            color:#e30613;
+        }
+    }
+
+    .wrap{
+        position: relative;
+        width:100%;
+        line-height:0;
+        font-size:0;
+        vertical-align: middle;
+
+        .line{
+            display: inline-block;
+            width:calc(~"100% - 40px");
+            margin:0 11px;
+            background-color:#e30613;
+            height:2px;
+        }
+
+        .arrow{
+            display: inline-block;
+            height:14px;
+            width:9px;
+            background: no-repeat center;
+            background-size: contain;
+            opacity:1;
+            transition: opacity .3s;
+            user-select:none;
+            cursor:pointer;
+
+            &.left{
+                text-align: left;
+                background-image:url("/assets/images/left.svg");
+            }
+
+            &.right{
+                text-align: right;
+                background-image:url("/assets/images/right.svg");
+            }
+
+            &.hidden{
+                opacity: 0;
+            }
+        }
+
+        .circle{
+            display: inline-block;
+            height:11px;
+            width:11px;
+            background-color:white;
+            border:3px solid #f1d400;
+            border-radius: 100%;
+            user-select:none;
+            cursor:pointer;
+            transition:background-color .3s;
+
+            &.selected,
+            &:hover{
+                background-color: #e30613;
+            }
+        }
     }
 }

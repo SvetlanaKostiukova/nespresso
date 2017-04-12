@@ -1,3 +1,14 @@
-<p>
-  slider works!
-</p>
+<div class="slider">
+  <div *ngFor="let s of slides" class="slide" [class.hidden]="slides.indexOf(s)!=idx">
+    <div class="wrap">
+      <div class="column">
+        <header>{{s.header | typograf}}</header>
+        <div class="subtitle">{{s.subtitle | typograf}}</div>
+      </div>
+      <div class="column">
+        <div class="image"></div>
+      </div>
+    </div>
+    <div class="description">{{s.description | typograf}}</div>
+  </div>
+</div>

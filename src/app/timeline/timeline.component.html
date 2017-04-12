@@ -1,3 +1,12 @@
-<p>
-  timeline works!
-</p>
+<div class="timeline">
+  <div class="labels">
+    <div *ngFor="let y of years" class="year" [class.selected]="y==selectedYear">{{y}}</div>
+  </div>
+  <div class="wrap">
+    <div class="arrow left"></div>
+    <div class="line">
+      <div *ngFor="let p of years" class="circle"></div>
+    </div>
+    <div class="arrow right"></div>
+  </div>
+</div>
