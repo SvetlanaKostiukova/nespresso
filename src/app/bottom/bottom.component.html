@@ -1,0 +1,9 @@
+<section class="bottom">
+  <header></header>
+  <div *ngFor="let c of columns" class="column">
+    <div class="icon"></div>
+    <div class="title">{{c.title | typograf}}</div>
+    <div class="text">{{c.text | typograf}}</div>
+  </div>
+  <div class="label">{{"На правах рекламы" | typograf}}</div>
+</section>

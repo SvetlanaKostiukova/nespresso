@@ -1,0 +1,62 @@
+.bottom{
+    position: relative;
+    width:100%;
+    height:50%;
+
+    header{
+        width:164px;
+        height:30px;
+        padding:30px 0;
+        background: url("/assets/images/nespresso.svg") no-repeat center;
+        background-size: contain;
+    }
+
+    .label{
+        font:normal 16px/1em 'Frutiger Neue LT W1G Book';
+        color:#8e6832;
+    }
+
+    .column{
+        display: inline-block;
+        vertical-align: top;
+        //width:200px;
+
+        .icon{
+            width:80px;
+            height:80px;
+            background:no-repeat center;
+            background-size: contain;
+        }
+
+        .title{
+            font:16px/20px 'Frutiger Neue LT W1G Book';
+        }
+
+        .text{
+            font:300 16px/20px 'Greta Display Pro';
+        }
+
+        .text,
+        .title{
+            padding-top:20px;
+        }
+
+        &:nth-child(1){
+            .icon{
+                background-image:url("/assets/images/b1.svg");
+            }
+        }
+
+        &:nth-child(2){
+            .icon{
+                background-image:url("/assets/images/b2.svg");
+            }
+        }
+
+        &:nth-child(3){
+            .icon{
+                background-image:url("/assets/images/b3.svg");
+            }
+        }
+    }
+}

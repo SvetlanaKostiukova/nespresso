@@ -19,6 +19,7 @@
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "app",
       "styles": [
+        "assets/fontscss.css",
         "styles.less"
       ],
       "scripts": [],
