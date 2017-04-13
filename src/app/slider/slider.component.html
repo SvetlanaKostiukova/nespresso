@@ -3,12 +3,12 @@
     <div class="wrap">
       <div class="column">
         <header>{{s.header | typograf}}</header>
-        <div class="subtitle">{{s.subtitle | typograf}}</div>
+        <div class="subtitle" [innerHTML]="s.subtitle | typograf"></div>
       </div>
       <div class="column">
-        <div class="image"></div>
+        <div class="image" [style.background-image]="sanitize(s.image)"></div>
       </div>
     </div>
-    <div class="description">{{s.description | typograf}}</div>
+    <div class="description" [innerHTML]="s.description | typograf"></div>
   </div>
 </div>

@@ -1,24 +1,49 @@
+@deep: ~'/deep/';
+
 .slider{
     position:relative;
     width:100%;
+    height:calc(~"100% - 50px");
 
     .slide{
+        position:absolute;
+        width:100%;
+        height:100%;
+        
+        .wrap{
+            position: relative;
+            width:100%;
+            height:50%;
 
-        header{
-            font:normal 26px/24px 'Greta Display Pro';
-        }
+            .column{
+                width:45%;
+                height:100%;
+                display: inline-block;
 
-        .subtitle{
-            font:300 16px/20px 'Greta Display Pro';
-            span{
-                font:300 italic 16px/20px 'Greta Display Pro';
+                header{
+                    font:normal 26px/24px 'Greta Display Pro';
+                }
+
+                .subtitle{
+                    font:300 16px/20px 'Greta Display Pro';
+                    @{deep} span{
+                        font:300 italic 16px/20px 'Greta Display Pro';
+                    }
+                }
+
+                .image{
+                    width:100%;
+                    height:100%;
+                    background:no-repeat center;
+                    background-size:contain;
+                }
             }
         }
 
         .description{
             font:14px/20px 'Frutiger Neue LT W1G Book';
 
-            span{
+            @{deep} span{
                 font:bold 17px/20px 'Greta Display Pro';
                 color:#e30613;
             }

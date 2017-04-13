@@ -3,17 +3,21 @@
     width:100%;
 
     .labels{
-        width:100%;
-    }
+        position: relative;
+        width:calc(~"100% - 40px");
+        padding:0 20px;
+        height:20px;
 
-    .year{
-        display: inline-block;
-        color:#8e6832;
-        font:14px/20px 'Frutiger Neue LT W1G Book';
+        .year{
+            position: absolute;
+            display: inline-block;
+            color:#8e6832;
+            font:14px/20px 'Frutiger Neue LT W1G Book';
 
-        &.selected{
-            font:500 22px/30px 'Frutiger Neue LT W1G';
-            color:#e30613;
+            &.selected{
+                font:500 22px/30px 'Frutiger Neue LT W1G';
+                color:#e30613;
+            }
         }
     }
 
@@ -25,16 +29,43 @@
         vertical-align: middle;
 
         .line{
+            position: relative;
             display: inline-block;
             width:calc(~"100% - 40px");
             margin:0 11px;
-            background-color:#e30613;
-            height:2px;
+            height:17px;
+            // vertical-align: middle;
+
+            .axis{
+                position: absolute;
+                background-color:#e30613;
+                width:100%;
+                height:2px;
+                top:9px;
+            }
+
+            .circle{
+                position: absolute;
+                display: inline-block;
+                height:11px;
+                width:11px;
+                background-color:white;
+                border:3px solid #f1d400;
+                border-radius: 100%;
+                user-select:none;
+                cursor:pointer;
+                transition:background-color .3s;
+
+                &.selected,
+                &:hover{
+                    background-color: #e30613;
+                }
+            }
         }
 
         .arrow{
             display: inline-block;
-            height:14px;
+            height:18px;
             width:9px;
             background: no-repeat center;
             background-size: contain;
@@ -55,23 +86,6 @@
 
             &.hidden{
                 opacity: 0;
-            }
-        }
-
-        .circle{
-            display: inline-block;
-            height:11px;
-            width:11px;
-            background-color:white;
-            border:3px solid #f1d400;
-            border-radius: 100%;
-            user-select:none;
-            cursor:pointer;
-            transition:background-color .3s;
-
-            &.selected,
-            &:hover{
-                background-color: #e30613;
             }
         }
     }
