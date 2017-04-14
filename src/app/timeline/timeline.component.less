@@ -13,7 +13,7 @@
             position: relative;
             display: inline-block;
             width:calc(~"100% - 50px");
-            margin:0 16px;
+            margin:0 5px;
             height:47px;
 
             .axis{
@@ -107,10 +107,12 @@
 
             &.left{
                 text-align: left;
+                margin-right:11px;
                 background-image:url("/assets/images/left.svg");
             }
 
             &.right{
+                margin-left:11px;
                 text-align: right;
                 background-image:url("/assets/images/right.svg");
             }
@@ -121,6 +123,8 @@
 
             &.hidden{
                 opacity: 0;
+                width:0;
+                margin:0;
                 pointer-events: none;
             }
         }

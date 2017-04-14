@@ -6,6 +6,27 @@
     height:calc(~"100% - 58px");
     overflow: hidden;
 
+    .hitzone{
+        position: absolute;
+        top:0;
+        cursor: pointer;
+        height:100%;
+        width:10%;
+
+        &.left{
+            left:0;
+        }
+
+        &.right{
+            right:0;
+        }
+
+        &.disabled{
+            pointer-events:none;
+            cursor: default;
+        }
+    }
+
     .slide{
         position:absolute;
         width:100%;
@@ -17,21 +38,25 @@
         .wrap{
             position: relative;
             width:100%;
-            height:50%;
+            // height:50%;
+            height:60%;
             display: flex;
             justify-content: space-between;
 
             .column{
-                //width:38%;
+                // width:38%;
                 height:100%;
-                display: inline-block;
+                padding-top:20px;
+                //display: inline-block;
 
                 &:nth-child(1){
-                    max-width:70%;
+                    //max-width:70%;
+                    width:420px;
                     height: auto;
                 }
 
                 header{
+                    padding-bottom:20px;
                     font:normal 26px/24px 'Greta Display Pro';
                 }
 
@@ -44,7 +69,9 @@
 
                 .image{
                     width:100%;
-                    height:100%;
+                    // width:294px;
+                    height:190px;
+                    text-align: center;
                     // background:no-repeat center;
                     // background-size:contain;
                 }
@@ -53,7 +80,7 @@
 
         .description{
             position: absolute;
-            bottom:10px; 
+            bottom:0;//10px; 
             color: #8e6832;
             font:14px/20px 'Frutiger Neue LT W1G Book';
 
@@ -71,6 +98,18 @@
         &.next{
             left:100%;
             opacity:0;
+        }
+
+        &:nth-child(6){
+            .wrap{
+                .column:first-child{
+                    width:475px;
+                }
+
+                .column:last-child{
+                    padding-top:60px;
+                }
+            }
         }
     }
 }

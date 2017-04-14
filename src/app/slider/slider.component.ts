@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { DomSanitizer} from '@angular/platform-browser';
 
 @Component({
@@ -14,6 +14,7 @@ export class SliderComponent implements OnInit {
                   {header:"Эспрессо-машина", subtitle:"На Миланской выставке был продемонстрирован кофейный аппарат, в котором давление создавала струя пара, а механизм сам отмерял порции за секунды. В 1938 году появились полуавтоматические кофемашины (так называемые рожковые), а через полвека этот процесс был полностью автоматизирован: кофемашина сама молола зёрна, варила и разливала кофе.", description:"Если вы любите кофе, то большая часть ваших единомышленников <span>(63%)</span> живёт в мегаполисах, старше <span>35 лет</span>, хорошо образована и имеет высокий доход.", image:"./assets/images/5.svg"},
                   {header:"Капсульные кофемашины", subtitle:"Инженер Эрик Фавр увёз из Италии секрет римского бариста, доработал его и запатентовал кофейную капсулу, которая прокалывается в процессе приготовления напитка. Сегодня эта технология доведена до совершенства: свежемолотый и свежеобжаренный кофе попадает в капсулу в вакуумной атмосфере — это один из этапов заботы о сохранении вкуса и аромата кофе, второй— алюминиевая капсула. На производстве она запечатывается, чтобы сохранить всю свежесть зерен до момента дегустации кофе. Именно это позволяет клиентам Nespresso наслаждаться идеальным напитком чашка за чашкой.", description:"Кофемашины Nespresso – любимый кофе одним касанием.", image:"./assets/images/6.svg"}];
   @Input() yearIdx:number = 0;
+  @Output() yearChanged: EventEmitter<number> = new EventEmitter<number>();
 
   constructor(private sanitizer: DomSanitizer) { }
 
@@ -25,4 +26,10 @@ export class SliderComponent implements OnInit {
     return this.sanitizer.bypassSecurityTrustUrl(img);
   }
 
+  onSwitch(flag: boolean){
+    var newYearIdx = flag? this.yearIdx+1: this.yearIdx-1;
+    console.log(newYearIdx);
+    if(newYearIdx >=0 && newYearIdx < this.slides.length)
+      this.yearChanged.emit(newYearIdx);
+  }
 }

@@ -6,9 +6,13 @@
         <div class="subtitle" [innerHTML]="s.subtitle | typograf"></div>
       </div>
       <div class="column">
-        <img class="image" height="100%" width="auto" [src]="sanitize(s.image)">
+        <div class="image">
+          <img height="100%" width="auto" [src]="sanitize(s.image)">
+        </div>
       </div>
     </div>
     <div class="description" [innerHTML]="s.description | typograf"></div>
   </div>
+  <div class="hitzone left" [class.disabled]="!yearIdx" (click)="onSwitch(false)"></div>
+  <div class="hitzone right"[class.disabled]="yearIdx==slides.length-1" (click)="onSwitch(true)"></div>
 </div>

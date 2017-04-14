@@ -1,4 +1,4 @@
 <section class="top">
-    <app-timeline (yearChanged)="onYearChanged($event)"></app-timeline>
-    <app-slider [yearIdx]="yearIdx"></app-slider>
+    <app-timeline [yearIdx]="yearIdx" (yearChanged)="onYearChanged($event)"></app-timeline>
+    <app-slider [yearIdx]="yearIdx" (yearChanged)="onYearChanged($event)"></app-slider>
 </section>
