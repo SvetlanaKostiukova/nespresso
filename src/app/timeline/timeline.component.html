@@ -1,14 +1,15 @@
 <div class="timeline">
-  <div class="labels">
-    <div *ngFor="let y of years" class="year" [class.selected]="y==selectedYear" 
-    [style.left.%]="getLeft(y)">{{y}}</div>
-  </div>
   <div class="wrap">
-    <div class="arrow left"></div>
+    <div class="arrow left" [class.hidden]="years.indexOf(selectedYear)==0" (click)="onSwitch(false)"></div>
     <div class="line">
       <div class="axis"></div>
-      <div *ngFor="let p of years" class="circle" [style.left.%]="getLeft(p)"></div>
+      <div class="labels">
+        <div *ngFor="let y of years" class="label" [class.selected]="y==selectedYear">
+          <div class="year">{{y}}</div>
+          <div class="circle" (click)="onSelect(y)"></div>
+        </div>
+      </div>
     </div>
-    <div class="arrow right"></div>
+    <div class="arrow right" [class.hidden]="years.indexOf(selectedYear)==years.length-1" (click)="onSwitch(true)"></div>
   </div>
 </div>

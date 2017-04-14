@@ -1,12 +1,12 @@
 <div class="slider">
-  <div *ngFor="let s of slides" class="slide" [class.hidden]="slides.indexOf(s)!=idx">
+  <div *ngFor="let s of slides" class="slide" [class.prev]="slides.indexOf(s)<yearIdx" [class.next]="slides.indexOf(s)>yearIdx">
     <div class="wrap">
       <div class="column">
         <header>{{s.header | typograf}}</header>
         <div class="subtitle" [innerHTML]="s.subtitle | typograf"></div>
       </div>
       <div class="column">
-        <div class="image" [style.background-image]="sanitize(s.image)"></div>
+        <img class="image" height="100%" width="auto" [src]="sanitize(s.image)">
       </div>
     </div>
     <div class="description" [innerHTML]="s.description | typograf"></div>
