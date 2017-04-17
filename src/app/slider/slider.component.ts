@@ -36,7 +36,7 @@ export class SliderComponent implements OnInit {
   openLink(item: any){
     var idx = this.slides.indexOf(item);
     if(idx == 5){
-      window.open("https://vk.com/away.php?to=https%3A%2F%2Fwww.nespresso.com%2Fru%2Fru%2Fcoffee-machines%2Fcreatista-plus-metal-stainless-steel&cc_key=", "_blank");
+      window.open("https://www.nespresso.com/ru/ru/coffee-machines/creatista-plus-metal-stainless-steel", "_blank");
     }
   }
 }
