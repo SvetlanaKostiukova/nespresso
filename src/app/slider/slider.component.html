@@ -6,7 +6,7 @@
         <div class="subtitle" [innerHTML]="s.subtitle | typograf"></div>
       </div>
       <div class="column">
-        <div class="image">
+        <div class="image" (click)="openLink(s)">
           <img height="100%" width="auto" [src]="sanitize(s.image)">
         </div>
       </div>
