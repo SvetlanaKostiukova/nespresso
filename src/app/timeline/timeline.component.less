@@ -16,6 +16,21 @@
             margin:0 5px;
             height:47px;
 
+            @media(max-width:650px){
+                width: calc(~"100% - 18px");
+                margin: 0;
+             
+                &.first{
+                    width: calc(~"50% - 9px");
+                    margin-left: calc(~"50% - 9px");
+                }
+
+                &.last{
+                    width: calc(~"50% - 9px");
+                    margin-right: calc(~"50% - 9px");
+                }
+            }
+
             .axis{
                 position: absolute;
                 background-color:#e30613;
@@ -28,15 +43,45 @@
                 position: relative;
                 display: flex;
                 justify-content: space-between;
-                //align-items: flex-end;
-                //width: calc(~"100% - 20px");
                 height:30px;
+
+                @media(max-width:650px){
+                    width: calc(~"100% + 18px");
+                    margin-left: -9px;
+                }
 
                 .label{
                     display: inline-block;
+
+                    @media(max-width:650px){
+
+                        &.hidden{
+                            position: absolute;
+                            opacity:0;
+                            pointer-events: none;
+                        }
+
+                        &.selected{
+                            width:calc(~"100vw/3");
+                            display:block;
+                        }
+
+                        &.next{
+                            .circle{
+                                display: none;
+                                margin:0 0 0 calc(~"100% - 17px");
+                            }
+                        }
+
+                        &.prev{
+                            .circle{
+                                display: none;
+                                margin:0 calc(~"100% - 17px") 0 0;
+                            }
+                        }
+                    }
                 
                     .year{
-                        //position: absolute;
                         display: inline-block;
                         margin-bottom:10px;
                         color:#8e6832;
@@ -117,8 +162,10 @@
                 background-image:url("./../../assets/images/right.svg");
             }
 
-            &:hover{
-                opacity:0.6;
+            @media(min-width:650px){
+                &:hover{
+                    opacity:0.6;
+                }
             }
 
             &.hidden{
@@ -127,6 +174,19 @@
                 margin:0;
                 pointer-events: none;
             }
+
+            @media(max-width:650px){
+                 &.left,
+                 &.right{
+                     margin:0;
+                 }
+
+                 &.hidden{
+                     width:9px;
+                     pointer-events: none;
+                 }
+            }
         }
     }
 }
+

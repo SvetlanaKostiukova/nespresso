@@ -1,4 +1,4 @@
-import { Component, OnInit, OnChanges } from '@angular/core';
+import { Component, OnInit, OnChanges, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-top',
@@ -7,6 +7,7 @@ import { Component, OnInit, OnChanges } from '@angular/core';
 })
 export class TopComponent implements OnInit, OnChanges {
   yearIdx: number = 0;
+  @Output() yearChanged:EventEmitter<number> = new EventEmitter<number>();
 
   constructor() { }
 
@@ -19,5 +20,6 @@ export class TopComponent implements OnInit, OnChanges {
   
   onYearChanged(yearIdx: number){
     this.yearIdx = yearIdx;
+    this.yearChanged.emit(this.yearIdx);
   }
 }

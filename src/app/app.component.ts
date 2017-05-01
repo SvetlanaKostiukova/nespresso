@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app works!';
+  yearIdx:number = 0;
+
+  onYearChanged(yearIdx: number){
+    this.yearIdx = yearIdx;
+  }
 }

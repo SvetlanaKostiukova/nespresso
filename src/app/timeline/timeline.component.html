@@ -1,10 +1,10 @@
 <div class="timeline">
   <div class="wrap">
     <div class="arrow left" [class.hidden]="years.indexOf(selectedYear)==0" (click)="onSwitch(false)"></div>
-    <div class="line">
+    <div class="line" [ngClass]="yearIdx==0?'first':yearIdx==years.length-1?'last':''">
       <div class="axis"></div>
       <div class="labels">
-        <div *ngFor="let y of years" class="label" [class.selected]="y==selectedYear">
+        <div *ngFor="let y of years" class="label" [ngClass]="y==selectedYear?'selected':y==years[yearIdx-1]?'prev':y==years[yearIdx+1]?'next':'hidden'">
           <div class="year">{{y}}</div>
           <div class="circle" (click)="onSelect(y)"></div>
         </div>

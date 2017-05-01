@@ -1,4 +1,4 @@
 <div class="app">
-  <app-top></app-top>
-  <app-bottom></app-bottom>
+  <app-top (yearChanged)="onYearChanged($event)"></app-top>
+  <app-bottom [yearIdx]="yearIdx"></app-bottom>
 </div>

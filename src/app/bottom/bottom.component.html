@@ -3,10 +3,10 @@
     <div class="line"></div>
     <a href="https://www.nespresso.com/ru/ru/coffee-expertise?ref=home-bottom-ru" target="_blank"><div class="nespresso-logo"></div></a>
   </header>
-  <div *ngFor="let c of columns" class="column">
+  <div *ngFor="let c of columns" class="column" [class.hidden]="columnsm.indexOf(c)!=yearIdx%3">
     <div class="icon"></div>
-    <div class="title">{{c.title | typograf}}</div>
-    <div class="text">{{c.text | typograf}}</div>
+    <div class="title" [innerHTML]="c.title"></div>
+    <div class="text" [innerHTML]="c.text"></div>
   </div>
-  <div class="label">{{"На правах рекламы" | typograf}}</div>
+  <div class="label">На&nbsp;правах рекламы</div>
 </section>

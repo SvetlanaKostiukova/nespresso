@@ -44,10 +44,8 @@
             justify-content: space-between;
 
             .column{
-                // width:38%;
                 height:100%;
                 padding-top:20px;
-                //display: inline-block;
 
                 &:nth-child(1){
                     //max-width:70%;
@@ -58,22 +56,46 @@
                 header{
                     padding-bottom:20px;
                     font:normal 26px/24px 'Greta Display Pro';
+
+                    @media(max-width:650px){
+                        font-size:22px;
+                    }
                 }
 
                 .subtitle{
                     font:300 16px/20px 'Greta Display Pro';
+
+                    // &.mobile{
+                    //     display: none;
+                    // }
+
+                    // @media(max-width:650px){
+                    //     display: none;
+                    //     &.mobile{
+                    //         display: block;
+                    //     }
+                    // }
+
                     @{deep} span{
                         font:300 italic 16px/20px 'Greta Display Pro';
+                        @media(max-width:650px){
+                            font-style:normal;
+                        }
                     }
                 }
 
                 .image{
                     width:100%;
-                    // width:294px;
                     height:190px;
                     text-align: center;
-                    // background:no-repeat center;
-                    // background-size:contain;
+                }
+
+                @media(max-width:650px){
+                    width:100%;
+
+                    &:nth-child(2){
+                        display: none;
+                    }
                 }
             }
         }
@@ -87,6 +109,18 @@
             @{deep} span{
                 font:bold 17px/20px 'Greta Display Pro';
                 color:#e30613;
+            }
+
+            &.mobile{
+                display: none;
+            }
+
+            @media(max-width:650px){
+                display: none;
+                &.mobile{
+                    display: block;
+                    padding-top: 1em;
+                }
             }
         }
 
@@ -112,5 +146,26 @@
                 }
             }
         }
+        
+        @media(max-width:650px){
+           position: relative;
+           height:auto;
+
+           &.next, &.prev{
+               position: absolute;
+           }
+
+           .wrap{
+               height:auto;
+           }
+
+           .description{
+               position: relative;
+           }
+        }
+    }
+
+    @media(max-width:650px){
+        height:auto;
     }
 }

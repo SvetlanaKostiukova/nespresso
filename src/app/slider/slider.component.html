@@ -2,8 +2,8 @@
   <div *ngFor="let s of slides" class="slide" [class.prev]="slides.indexOf(s)<yearIdx" [class.next]="slides.indexOf(s)>yearIdx">
     <div class="wrap">
       <div class="column">
-        <header>{{s.header | typograf}}</header>
-        <div class="subtitle" [innerHTML]="s.subtitle | typograf"></div>
+        <header [innerHTML]="s.header"></header>
+        <div class="subtitle" [innerHTML]="s.subtitle"></div>
       </div>
       <div class="column">
         <div class="image" (click)="openLink(s)">
@@ -11,7 +11,8 @@
         </div>
       </div>
     </div>
-    <div class="description" [innerHTML]="s.description | typograf"></div>
+    <div class="description" [innerHTML]="s.description"></div>
+    <div class="description mobile" [innerHTML]="s.descriptionmob"></div>
   </div>
   <div class="hitzone left" [class.disabled]="!yearIdx" (click)="onSwitch(false)"></div>
   <div class="hitzone right"[class.disabled]="yearIdx==slides.length-1" (click)="onSwitch(true)"></div>

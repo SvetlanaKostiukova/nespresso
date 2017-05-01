@@ -8,7 +8,6 @@ import { TopComponent } from './top/top.component';
 import { BottomComponent } from './bottom/bottom.component';
 import { TimelineComponent } from './timeline/timeline.component';
 import { SliderComponent } from './slider/slider.component';
-import { TypografPipe } from './typograf.pipe';
 
 @NgModule({
   declarations: [
@@ -16,8 +15,7 @@ import { TypografPipe } from './typograf.pipe';
     TopComponent,
     BottomComponent,
     TimelineComponent,
-    SliderComponent,
-    TypografPipe
+    SliderComponent
   ],
   imports: [
     BrowserModule,
