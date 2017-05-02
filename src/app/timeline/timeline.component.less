@@ -52,34 +52,6 @@
 
                 .label{
                     display: inline-block;
-
-                    @media(max-width:650px){
-
-                        &.hidden{
-                            position: absolute;
-                            opacity:0;
-                            pointer-events: none;
-                        }
-
-                        &.selected{
-                            width:calc(~"100vw/3");
-                            display:block;
-                        }
-
-                        &.next{
-                            .circle{
-                                display: none;
-                                margin:0 0 0 calc(~"100% - 17px");
-                            }
-                        }
-
-                        &.prev{
-                            .circle{
-                                display: none;
-                                margin:0 calc(~"100% - 17px") 0 0;
-                            }
-                        }
-                    }
                 
                     .year{
                         display: inline-block;
@@ -131,6 +103,65 @@
                             color:#e30613;
                             margin-bottom: 5px;
                             margin-top:-5px;
+                        }
+                    }
+
+                     @media(max-width:650px){
+
+                        &.hidden{
+                            position: absolute;
+                            opacity:0;
+                            pointer-events: none;
+                        }
+
+                        &.selected{
+                            position: absolute;
+                            left: 50%;
+                            transform: translate(-50%, 0);
+                        }
+
+                        &:nth-last-child(2){
+                            &.selected .year{
+                                margin-right: 40px;
+                            }
+                        }
+
+                        &.next{
+                            .circle{
+                                display: none;
+                                margin:0 0 0 calc(~"100% - 17px");
+                            }
+                        }
+
+                        &.prev{
+                            .circle{
+                                display: none;
+                                margin:0 calc(~"100% - 17px") 0 0;
+                            }
+                        }
+
+                        &:first-child, &:last-child{
+                            &.selected{
+                                position: static;
+                                transform: translate(0, 0);
+                            }
+                        }
+
+                        &:first-child.selected .year{
+                            position: relative;
+                            left: -15px;
+                        }
+
+                        &:last-child.selected{
+                            .year{
+                                position: relative;
+                                left: 10px;
+                            }
+                            .circle{
+                                margin: 0 auto;
+                                position: relative;
+                                left: -18px;
+                            }
                         }
                     }
                 }
