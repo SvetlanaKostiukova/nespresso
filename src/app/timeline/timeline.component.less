@@ -140,10 +140,11 @@
                             }
                         }
 
-                        &:first-child, &:last-child{
+                        &:first-child{
                             &.selected{
                                 position: static;
                                 transform: translate(0, 0);
+                                left:0;
                             }
                         }
 
@@ -153,14 +154,21 @@
                         }
 
                         &:last-child.selected{
+                            left:100%;
+                            // transform: translate(0, 0);
                             .year{
                                 position: relative;
                                 left: 10px;
                             }
                             .circle{
-                                margin: 0 auto;
-                                position: relative;
-                                left: -18px;
+                                // margin: 0 auto;
+                                // position: relative;
+                                // left: -18px;
+                                // position: absolute;
+                                // margin-left: 9px;
+                                // left: 50%;
+                                // transform: translate(-50%, 0);
+                                margin:0 auto;
                             }
                         }
                     }
